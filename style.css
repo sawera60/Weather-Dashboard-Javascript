@@ -8,4 +8,171 @@ html,
 body {
   width: 100%;
   height: 100%;
+  background: linear-gradient(45deg, #444444, #949491);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.section-one {
+  display: flex;
+}
+.left-section1 {
+  /* border: 2px solid red; */
+  border-radius: 5%;
+  width: 40%;
+  background-color: #444444;
+  color: white;
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.right-section1 {
+  width: 60%;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: space-around;
+  background-color: #444444;
+  color: white;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 5%;
+}
+.right-section1 .temp-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.section-two {
+  display: flex;
+}
+
+.left-section2 {
+  width: 50%;
+  margin: 2rem;
+  /* border: 2px solid red; */
+ border-radius: 5%;
+  background-color: #444444;
+  color: white;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.one-day {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.two-day {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.three-day {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.four-day {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.five-day {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+}
+
+.right-section2 {
+  width: 70%;
+  margin: 2rem;
+  /* border: 2px solid red; */
+  background-color: #444444;
+  color: white;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.hourly-forecast {
+  display: flex;
+  flex-direction: row;
+}
+.hour1 {
+  border-radius: 13px;
+  border: 2px solid black;
+}
+.hour2 {
+  border-radius: 13px;
+  border: 2px solid black;
+}
+
+.hour3 {
+  border-radius: 13px;
+  border: 2px solid black;
+}
+.hour4 {
+  border-radius: 13px;
+  border: 2px solid black;
+}
+.hour5 {
+  border-radius: 13px;
+  border: 2px solid black;
 }
