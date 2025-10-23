@@ -6,172 +6,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link href="style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 
-    <!-- Header area -->
-    <div class="header">
-        <div class="darkmodebtn">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
-            <p>Dark Mode</p>
-        </div>
-
-        <div class="search-input">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Search for your preffered city..">
-        </div>
-        <div class="currentlocbtn">
-         <button class="btn" >   <img src="images/location.png" alt="">Current Location</button>
-        </div>
-    </div>
-
-    <!-- Section-one / Middle Section -->
-
-    <div class="section-one">
-        <div class="left-section1">
-            <p class="city-name">Islamabad</p>
-            <h2 class="current-time">12:36</h2>
-            <p class="day-date">Thursday,31 Sep</p>
-        </div>
-
-
-
-        <div class="right-section1">
-
-            <div class="temp-info">
-                <h2>24°C</h2>
-                <p>Feels like: <span>22°C</span></p>
-
-                <img src="images/sunrise.png" alt="">
-                <p>Sunrise</p>
-                <p>06:37AM</p>
-
-                <img src="images/sunset.png" alt="">
-                <p>Sunrise</p>
-                <p>06:37AM</p>
+    <div class="container">
+        <div class="header">
+            <div class="darkmode-toggle">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <p>Dark Mode</p>
             </div>
 
-            <div class="info2">
-                <img src="images/sun.png" alt="" id="sunny">
-                <h5>Sunny</h5>
+            <div class="search-input">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search for your preffered city..." id="search_input">
             </div>
-
-            <div class="info3">
-                <img src="images/humidity.png" alt="">
-                <p>41%</p>
-                <p>Humidity</p>
-
-                <img src="images/pressure.png" alt="">
-                <p>997hPa</p>
-                <p>Pressure</p>
-            </div>
-
-            <div class="info4">
-                <img src="images/wind speed.png" alt="">
-                <p>2km/h</p>
-                <p>Wind Speed</p>
-
-                <img src="images/UV.png" alt="">
-                <p>8</p>
-                <p>UV</p>
-            </div>
-
-
-        </div>
-    </div>
-
-
-
-
-    <!-- Section-two / Last Section -->
-    <div class="section-two">
-        <!-- left-section of section2 -->
-        <div class="left-section2">
-            <h3>5 Days Forecast</h3>
-
-            <div class="days-forecast">
-                <div class="one-day">
-                    <img src="images/cloudy.png" alt="">
-                    <p>20°C</p>
-                    <p>Friday, 1 Oct</p>
-                </div>
-
-                <div class="two-day">
-                    <img src="images/heavy-rain.png" alt="">
-                    <p>20°C</p>
-                    <p>Saturday, 2 Oct</p>
-                </div>
-                <div class="three-day">
-                    <img src="images/storm.png" alt="">
-                    <p>20°C</p>
-                    <p>Sunday, 3 Oct</p>
-                </div>
-                <div class="four-day">
-                    <img src="images/sun.png" alt="">
-                    <p>20°C</p>
-                    <p>Monday, 4 Oct</p>
-                </div>
-
-                <div class="five-day">
-                    <img src="images/weather.png" alt="">
-                    <p>20°C</p>
-                    <p>Tuesday, 5 Oct</p>
-                </div>
+            <div class="currentloc-btn">
+                <button class="btn"> <img src="images/location.png" alt="location icon">Current Location</button>
             </div>
         </div>
-        <!-- right-section of section2 -->
-        <div class="right-section2">
-            <h3>Hourly Forecast</h3>
-            <div class="hourly-forecast">
 
-                <div class="hour1">
-                    <p>12:00</p>
-                    <img src="images/storm.png" alt="">
-                    <p>26°C</p>
-                    <i class="fa-solid fa-arrow-up"></i>
-                    <p>3km/h</p>
+        <div class="main-content">
+            <div class="section-one">
+                <div class="card current-time-card">
+                    <p class="city-name">Athens</p>
+                    <h2 class="current-time">09:03</h2>
+                    <p class="day-date">Thursday, 31 Aug</p>
                 </div>
 
-                <div class="hour2">
-                    <p>12:00</p>
-                    <img src="images/heavy-rain.png" alt="">
-                    <p>28°C</p>
-                    <i class="fa-solid fa-arrow-up"></i>
-                    <p>3km/h</p>
-                </div>
+                <div class="card main-weather-card">
+                    <div class="temp-and-details">
+                        <div class="temp-info">
+                            <h2 class="current-temp">24°C</h2>
+                            <p >Feels like: <span class="feels-like">22°C</span></p>
 
-                <div class="hour3">
-                    <p>11:00</p>
-                    <img src="images/cloudy.png" alt="">
-                    <p>25°C</p>
-                    <i class="fa-solid fa-arrow-up"></i>
-                    <p>3km/h</p>
-                </div>
+                            <div class="sun-times">
+                                <div class="sun-item">
+                                    <img src="images/sunrise.png" alt="sunrise icon">
+                                    <p>Sunrise</p>
+                                    <p class="time"  id="sunrise">06:37 AM</p>
+                                </div>
+                                <div class="sun-item">
+                                    <img src="images/sunset.png" alt="sunset icon">
+                                    <p>Sunset</p>
+                                    <p class="time" id="sunset">20:37 AM</p>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="hour4">
-                    <p>12:00</p>
-                    <img src="images/cloudy.png" alt="">
-                    <p>28°C</p>
-                    <i class="fa-solid fa-arrow-up"></i>
-                    <p>3km/h</p>
-                </div>
+                        <div class="weather-icon-text">
+                            <img src="images/sun.png" alt="sun icon" class="main-weather-icon">
+                            <h5 id="main">Sunny</h5>
+                        </div>
 
-                <div class="hour5">
-                    <p>12:00</p>
-                    <img src="images/sun-rain.png" alt="">
-                    <p>21°C</p>
-                    <i class="fa-solid fa-arrow-up"></i>
-                    <p>3km/h</p>
+                        <div class="misc-details">
+                            <div class="detail-item">
+                                <img src="images/humidity.png" alt="humidity icon" class="small-icon">
+                                <p class="value" id="humidity-value">41%</p>
+                                <p class="label">Humidity</p>
+                            </div>
+                            <div class="detail-item">
+                                <img src="images/wind speed.png" alt="wind speed icon" class="small-icon">
+                                <p class="value" id="wind-speed">2km/h</p>
+                                <p class="label" >Wind Speed</p>
+                            </div>
+                            <div class="detail-item">
+                                <img src="images/pressure.png" alt="pressure icon" class="small-icon">
+                                <p class="value" id="pressure">997hPa</p>
+                                <p class="label" >Pressure</p>
+                            </div>
+                            <div class="detail-item">
+                                <img src="images/UV.png" alt="UV icon" class="small-icon">
+                                <p class="value"  id="visibility">8</p>
+                                <p class="label">Visibility</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <div class="section-two">
+                <div class="card five-day-forecast">
+                    <h3>5 Days Forecast</h3>
+                    <div class="days-forecast">
+                        <div class="day-all">
+                            <img src="images/cloudy.png" alt="cloudy icon">
+                            <p>20°C</p>
+                            <p>Friday, 1 Sep</p>
+                        </div>
+                        <div class="day-all">
+                            <img src="images/cloudy.png" alt="cloudy icon">
+                            <p>22°C</p>
+                            <p>Saturday, 2 Sep</p>
+                        </div>
+                        <div class="day-all">
+                            <img src="images/sun.png" alt="sun icon">
+                            <p>27°C</p>
+                            <p>Sunday, 3 Sep</p>
+                        </div>
+                        <div class="day-all">
+                            <img src="images/heavy-rain.png" alt="heavy rain icon">
+                            <p>18°C</p>
+                            <p>Monday, 4 Sep</p>
+                        </div>
+                        <div class="day-all">
+                            <img src="images/weather.png" alt="weather icon">
+                            <p>16°C</p>
+                            <p>Tuesday, 5 Sep</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card hourly-forecast-card">
+                    <h3>Hourly Forecast</h3>
+                    <div class="hourly-forecast">
+                        <div class="hour-all">
+                            <p>12:00</p>
+                            <img src="images/sun.png" alt="sun icon">
+                            <p>26°C</p>
+                            <i class="fa-solid fa-location-arrow wind-arrow"></i>
+                            <p class="wind-speed-text">3km/h</p>
+                        </div>
+                        <div class="hour-all">
+                            <p>15:00</p>
+                            <img src="images/sun.png" alt="sun icon">
+                            <p>27°C</p>
+                            <i class="fa-solid fa-location-arrow wind-arrow"></i>
+                            <p class="wind-speed-text">2km/h</p>
+                        </div>
+                        <div class="hour-all">
+                            <p>18:00</p>
+                            <img src="images/cloudy.png" alt="cloudy icon">
+                            <p>27°C</p>
+                            <i class="fa-solid fa-location-arrow wind-arrow"></i>
+                            <p class="wind-speed-text">2km/h</p>
+                        </div>
+                        <div class="hour-all">
+                            <p>21:00</p>
+                            <img src="images/storm.png" alt="storm icon">
+                            <p>25°C</p>
+                            <i class="fa-solid fa-location-arrow wind-arrow"></i>
+                            <p class="wind-speed-text">3km/h</p>
+                        </div>
+                        <div class="hour-all">
+                            <p>00:00</p>
+                            <img src="images/sun.png" alt="sun icon">
+                            <p>22°C</p>
+                            <i class="fa-solid fa-location-arrow wind-arrow"></i>
+                            <p class="wind-speed-text">3km/h</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 

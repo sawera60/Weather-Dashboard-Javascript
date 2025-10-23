@@ -1,178 +1,421 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-html,
+:root {
+    --bg-color: #2b2b2b;
+    --card-color: #3d3d3d;
+    --text-color: #ffffff;
+    --search-color: #555555;
+    --accent-color: #63d635;
+    --border-radius: 1rem;
+    --padding-sm: 0.5rem;
+    --padding-md: 1.5rem;
+}
+
 body {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #444444, #949491);
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 1rem;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-}
+ h3{
 
-.section-one {
-  display: flex;
+  text-align: center;
 }
-.left-section1 {
-  /* border: 2px solid red; */
-  border-radius: 5%;
-  width: 40%;
-  background-color: #444444;
-  color: white;
-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-}
-
-.right-section1 {
-  width: 60%;
-  /* border: 2px solid red; */
-  display: flex;
-  justify-content: space-around;
-  background-color: #444444;
-  color: white;
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  border-radius: 5%;
-}
-.right-section1 .temp-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 70px;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #2196f3;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-.section-two {
-  display: flex;
-}
-
-.left-section2 {
-  width: 50%;
-  margin: 2rem;
-  /* border: 2px solid red; */
- border-radius: 5%;
-  background-color: #444444;
-  color: white;
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-}
-
-.one-day {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.two-day {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.three-day {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.four-day {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.five-day {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 img {
-  width: 30px;
-  height: 30px;
+    width: 30px;
+    height: 30px;
 }
 
-.right-section2 {
-  width: 70%;
-  margin: 2rem;
-  /* border: 2px solid red; */
-  background-color: #444444;
-  color: white;
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+/* -------------------- Header Section -------------------- */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 1.5rem;
 }
 
+/* Dark Mode Toggle */
+.darkmode-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Search Input */
+.search-input {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    background-color: var(--search-color);
+    border-radius: 50px;
+    padding: var(--padding-sm) var(--padding-md);
+    max-width: 500px;
+}
+
+.search-input i {
+    margin-right: 0.8rem;
+    color: #ccc;
+}
+
+.search-input input {
+    border: none;
+    background: none;
+    color: var(--text-color);
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.search-input input::placeholder {
+    color: #aaa;
+}
+
+/* Current Location Button */
+.currentloc-btn .btn {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    padding: var(--padding-sm) 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+.currentloc-btn .btn img {
+    width: 15px; /* Smaller icon inside the button */
+    height: 15px;
+}
+
+/* -------------------- Card Base Style -------------------- */
+.card {
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    padding: var(--padding-md);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* -------------------- Main Content Layout (Flex Grid) -------------------- */
+
+.section-one {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.section-two {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    gap: 1rem;
+}
+
+/* -------------------- Top-Left Card (Current Time) -------------------- */
+.current-time-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.current-time-card .city-name {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.current-time-card .current-time {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.current-time-card .day-date {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+
+/* -------------------- Top-Right Card (Main Weather) -------------------- */
+.main-weather-card {
+    grid-column: 2 / 3;
+}
+
+.main-weather-card .temp-and-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+    height: 100%;
+}
+
+/* Column 1: Temp & Sun Times */
+.temp-info {
+    display: flex;
+    flex-direction: column;
+}
+.temp-info h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.temp-info .feels-like {
+    margin-bottom: 1rem;
+}
+
+.sun-times {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sun-item {
+    display: grid;
+    grid-template-columns: 30px 1fr 1fr; /* Image size, Label, Time */
+    align-items: center;
+    font-size: 0.9rem;
+}
+.sun-item img {
+    width: 15px; /* Smaller icons for sun times */
+    height: 15px;
+}
+.sun-item p {
+    margin: 0;
+}
+
+/* Column 2: Weather Icon & Text */
+.weather-icon-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.main-weather-icon {
+    width: 80px; /* Larger icon for main weather */
+    height: 80px;
+    margin-bottom: 0.5rem;
+}
+
+.weather-icon-text h5 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Column 3: Misc Details (Humidity, Wind, etc.) */
+.misc-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-content: center;
+    text-align: center;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #555;
+}
+
+.detail-item:nth-child(even) {
+    border-right: none;
+}
+
+.detail-item img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0.2rem;
+}
+
+.detail-item .value {
+    font-weight: 600;
+}
+
+.detail-item .label {
+    font-size: 0.75rem;
+    color: #ccc;
+}
+
+/* -------------------- Bottom-Left Card (5 Days Forecast) -------------------- */
+.five-day-forecast {
+    grid-column: 1 / 2;
+    padding: 1.5rem;
+}
+
+.five-day-forecast h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.days-forecast {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.day-all {
+    display: grid;
+    grid-template-columns: 0.3fr 0.7fr 1.5fr; /* Image size, Temp, Day/Date */
+    align-items: center;
+    font-size: 0.9rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #555;
+}
+
+.day-all:last-child {
+    border-bottom: none;
+}
+
+.day-all img {
+    width: 25px;
+    height: 25px;
+}
+
+.day-all p:nth-child(2) {
+    font-weight: 600;
+}
+
+.day-all p:nth-child(3) {
+    text-align: right;
+    color: #ccc;
+}
+
+
+/* -------------------- Bottom-Right Card (Hourly Forecast) -------------------- */
+.hourly-forecast-card {
+    grid-column: 2 / 3;
+    padding: 1.5rem;
+}
+
+.hourly-forecast-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.current-temp, .city-name, .feels-like {
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.fade {
+  opacity: 0;
+}
 .hourly-forecast {
-  display: flex;
-  flex-direction: row;
-}
-.hour1 {
-  border-radius: 13px;
-  border: 2px solid black;
-}
-.hour2 {
-  border-radius: 13px;
-  border: 2px solid black;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
 }
 
-.hour3 {
-  border-radius: 13px;
-  border: 2px solid black;
+.hour-all {
+    background-color: #373636;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0.5rem;
+    min-width: 18%;
+    text-align: center;
+    gap: 0.3rem;
 }
-.hour4 {
-  border-radius: 13px;
-  border: 2px solid black;
+
+.hour-all p:first-child {
+    font-size: 0.9rem;
+    color: #ccc;
 }
-.hour5 {
-  border-radius: 13px;
-  border: 2px solid black;
+
+.hour-all img {
+    width: 35px;
+    height: 35px;
+    margin: 0.5rem 0;
+}
+
+.hour-all p:nth-child(3) {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Wind Arrow - Still using Font Awesome for this simple shape */
+.wind-arrow {
+    font-size: 0.8rem;
+    color: #3f90e5;
+    transform: rotate(45deg);
+}
+
+.wind-speed-text {
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+
+/* -------------------- Switch/Toggle Styles -------------------- */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+.slider.round {
+    border-radius: 26px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
