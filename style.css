@@ -23,6 +23,39 @@ body {
     color: var(--text-color);
     padding: 1rem;
 }
+/* -------------------- Light Mode Colors -------------------- */
+.light-mode {
+    --bg-color: #f0f0f0; /* Light background */
+    --card-color: #ffffff; /* White cards */
+    --text-color: #1a1a1a; /* Dark text */
+    --search-color: #e0e0e0; /* Light search bar */
+    --accent-color: #63d635; /* Keep accent color the same */
+}
+
+/* Adjust text and icon colors for light mode-specific elements */
+.light-mode .search-input i {
+    color: #555; /* Darker magnifier icon in light mode */
+}
+
+.light-mode .current-time-card .day-date,
+.light-mode .detail-item .label,
+.light-mode .day-all p:nth-child(3),
+.light-mode .hour-all p:first-child,
+.light-mode .wind-speed-text {
+    color: #555; /* Darker secondary text/labels */
+}
+
+.light-mode .day-all {
+    border-bottom: 1px solid #ccc; /* Lighter border for day forecast */
+}
+
+.light-mode .detail-item {
+    border-right: 1px solid #ccc; /* Lighter border for weather details */
+}
+
+.light-mode .hour-all {
+    background-color: #f5f5f5; /* Very light background for hourly items */
+}
 
  h3{
 
