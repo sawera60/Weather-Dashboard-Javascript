@@ -131,7 +131,7 @@ img {
     cursor: pointer;
 }
 .currentloc-btn .btn img {
-    width: 15px; /* Smaller icon inside the button */
+    width: 15px; 
     height: 15px;
 }
 
@@ -169,6 +169,7 @@ img {
     text-align: center;
 }
 
+
 .current-time-card .city-name {
     font-size: 1.5rem;
     font-weight: 500;
@@ -183,6 +184,9 @@ img {
 .current-time-card .day-date {
     font-size: 1rem;
     color: #ccc;
+}
+.current-time{
+    font-size: 3rem;
 }
 
 
