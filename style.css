@@ -456,3 +456,179 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+
+/* -------------------- Media Queries for Responsiveness -------------------- */
+
+@media (max-width: 992px) {
+    /* Tablet/Smaller Desktop Adjustments */
+
+    .header {
+        /* Allow header elements to wrap if needed */
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .darkmode-toggle,
+    .currentloc-btn {
+        /* Keep these together or let them take up less space */
+        flex-basis: auto; 
+    }
+    
+    .search-input {
+        /* Take full width below other items */
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    /* Stack main content sections vertically */
+    .section-one,
+    .section-two {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .main-weather-card {
+        /* Reset grid column for single-column layout */
+        grid-column: 1 / 2;
+    }
+    
+    .five-day-forecast {
+        /* Reset grid column for single-column layout */
+        grid-column: 1 / 2;
+    }
+
+    .hourly-forecast-card {
+        /* Reset grid column for single-column layout */
+        grid-column: 1 / 2;
+    }
+    
+    /* Adjust main weather card for stacking elements */
+    .main-weather-card .temp-and-details {
+        /* Change to 2 columns for better layout on narrower screens */
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Move weather icon/text below temp info, spanning two columns */
+    .weather-icon-text {
+        grid-column: 1 / 3;
+        order: -1; /* Place it at the top */
+    }
+    
+    /* Adjust sun times layout */
+    .sun-times {
+        /* Switch to row layout for better space utilization */
+        flex-direction: row; 
+        justify-content: space-around;
+        margin-top: 1rem;
+    }
+    
+    .sun-item {
+        /* Allow items to stack naturally */
+        grid-template-columns: 1fr; 
+        text-align: center;
+    }
+
+    /* Adjust misc details layout to use full card width */
+    .misc-details {
+        grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 columns */
+        gap: 0.5rem;
+        padding-top: 1rem; /* Add some space from above elements */
+        border-top: 1px solid var(--search-color);
+        margin-top: 1rem;
+    }
+    
+    .detail-item {
+        /* Remove vertical divider */
+        border-right: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Mobile Phone Adjustments */
+    
+    body {
+        padding: 0.5rem;
+    }
+
+    .header {
+        /* Full width for the search and button */
+        gap: 0.5rem;
+    }
+    
+    .darkmode-toggle {
+        /* Align dark mode toggle to the left */
+        flex-basis: 100%;
+        justify-content: flex-start;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Shrink the current time/date text */
+    .current-time-card .current-time {
+        font-size: 3rem;
+    }
+    .current-time-card .city-name {
+        font-size: 1.2rem;
+    }
+
+    /* Re-adjust main weather card */
+    .main-weather-card .temp-and-details {
+        grid-template-columns: 1fr; /* Single column */
+    }
+
+    /* Make temp info section full width */
+    .temp-info {
+        grid-column: 1 / 2;
+        order: 1; 
+        text-align: center; /* Center align temp details */
+    }
+
+    /* Make weather icon section full width */
+    .weather-icon-text {
+        grid-column: 1 / 2;
+        order: 0; 
+    }
+    
+    /* Stack sun items vertically */
+    .sun-times {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .sun-item {
+        grid-template-columns: 25px 1fr 1fr; /* Revert to 3 columns, smaller icon */
+        font-size: 0.85rem;
+        padding: 0 1rem;
+    }
+
+    /* Two columns for misc details on small phones */
+    .misc-details {
+        grid-template-columns: 1fr 1fr; 
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    /* Hourly Forecast */
+    .hourly-forecast {
+        /* Allow horizontal scrolling */
+        overflow-x: auto; 
+        justify-content: flex-start;
+        padding-bottom: 1rem; /* Space for scroll bar on some systems */
+    }
+    
+    .hour-all {
+        min-width: 100px; /* Ensure they don't shrink too much */
+        flex-shrink: 0;
+    }
+
+}
+
+@media (max-width: 400px) {
+    /* Very Small Mobile */
+    
+    .currentloc-btn .btn {
+        padding: 0.5rem 1rem; /* Smaller padding for button */
+        font-size: 0.85rem;
+    }
+}
